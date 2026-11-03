@@ -1,5 +1,8 @@
 # Pico Passkey: FIDO2 / WebAuthn Authenticator on Raspberry Pi Pico
 
+> [!WARNING]
+> **This project is not secure for protecting real accounts or sensitive data.** The Raspberry Pi Pico has no secure element, so private key material and other secrets are stored in ordinary flash memory and may be exposed if the device is physically accessed or compromised.
+
 **Pico Passkey** is a standards-compliant, open-source **FIDO2 / CTAP2.1 / WebAuthn hardware security key and passkey authenticator** running on the dual-core ARM Cortex-M0+ Raspberry Pi Pico (RP2040).
 
 It transforms an inexpensive ($4) Raspberry Pi Pico board into a standalone USB security key capable of passwordless passkey authentication, multi-factor authentication (2FA), and CTAP2 client PIN protection across modern web browsers (Chromium, Google Chrome, Mozilla Firefox, Microsoft Edge, and Safari).
