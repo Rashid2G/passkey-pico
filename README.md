@@ -97,6 +97,9 @@ Compile the firmware binary and generate `pico_passkey.uf2`:
    ```
 The Pico will flash and immediately reboot into FIDO2 security key mode.
 
+### Using the Pico after installation
+Connect the Pico normally and start your passkey sign-in or registration. When the Pico prompts for user presence (the on-board LED blinks rapidly), **press the white BOOTSEL button** to approve the request. If you do not press BOOTSEL before the prompt expires, authentication will time out and fail; start the passkey operation again and press the button when prompted.
+
 ### 5. Install Linux udev Rules
 To allow web browsers to access the raw USB HID device without `sudo`:
 ```bash
