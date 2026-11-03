@@ -8,6 +8,14 @@ Plug the Pico in via USB, and it acts as a standalone hardware security key for 
 
 ---
 
+## Flash Without a Toolchain
+
+Open **[rashid2g.github.io/passkey-pico](https://rashid2g.github.io/passkey-pico/)** to flash a Pico straight from your browser over WebUSB, or download `pico_passkey.uf2` and drag it onto the `RPI-RP2` drive. The page also covers how to register a passkey, use the button, and troubleshoot USB issues.
+
+The site is plain static HTML in [`docs/index.html`](docs/index.html) and is served by GitHub Pages from the `docs/` folder on `main` (Settings → Pages → Deploy from a branch → `main` / `docs`).
+
+---
+
 ## What It Supports
 
 - **WebAuthn & CTAP 2.1**: Works with passkey logins on GitHub, Google, Microsoft, Passkeys.io, and legacy U2F services.
@@ -42,6 +50,7 @@ sudo cp udev/70-pico-passkey.rules /etc/udev/rules.d/ && sudo udevadm trigger
 
 Full details, architecture, and guides are located in the [docs/](docs/) folder:
 
+- **[Web Flasher (`docs/index.html`)](docs/index.html)** — Browser-based WebUSB flasher, drag-and-drop instructions, usage guide, LED reference, and troubleshooting (published via GitHub Pages).
 - **[Detailed Reference (`docs/DETAILS.md`)](docs/DETAILS.md)** — Complete feature breakdown, repository layout, detailed setup, and operational tables.
 - **[Build & Flashing Guide (`docs/BUILD_AND_FLASH.md`)](docs/BUILD_AND_FLASH.md)** — Toolchain requirements, CMake options, UF2 flashing, and SWD debugging with GDB.
 - **[Architecture & Design (`docs/ARCHITECTURE.md`)](docs/ARCHITECTURE.md)** — State machines, CTAPHID reassembly, sequence diagrams, and flash layout.

@@ -16,6 +16,8 @@ compile_commands.json
 
 # Firmware & binary artifacts outside build/
 *.uf2
+# ...except the image served by the GitHub Pages web flasher
+!docs/pico_passkey.uf2
 *.elf
 *.bin
 *.hex

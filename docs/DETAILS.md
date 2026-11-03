@@ -69,6 +69,8 @@ pico-passkey/
 ├── udev/
 │   └── 70-pico-passkey.rules   # Linux udev rules granting non-root browser access
 └── docs/
+    ├── index.html             # GitHub Pages web flasher & user guide (WebUSB + drag-and-drop)
+    ├── pico_passkey.uf2       # Prebuilt firmware image served by the web flasher
     ├── ARCHITECTURE.md         # System design, state machines, and flash layout
     ├── BUILD_AND_FLASH.md      # Toolchain setup, CMake options, flashing, and SWD debug
     ├── DETAILS.md              # This detailed reference document

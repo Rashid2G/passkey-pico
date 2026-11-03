@@ -65,4 +65,12 @@ fi
 
 echo "UF2 Firmware image ready: ${UF2_TARGET}"
 echo "File size: $(stat -c %s "${UF2_TARGET}" 2>/dev/null || wc -c < "${UF2_TARGET}") bytes"
+
+# 5. Keep the GitHub Pages web flasher's copy of the firmware in sync
+DOCS_UF2="${REPO_ROOT}/docs/pico_passkey.uf2"
+if [[ -d "${REPO_ROOT}/docs" ]]; then
+    cp "${UF2_TARGET}" "${DOCS_UF2}"
+    echo "Web flasher image updated: ${DOCS_UF2}"
+fi
+
 echo "To flash your Pico, run: ./scripts/flash_pico.sh"
