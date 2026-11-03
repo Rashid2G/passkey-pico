@@ -1,0 +1,28 @@
+# Build directories
+build/
+build-*/
+out/
+
+# Local downloaded SDK & cross-compiler toolchain
+.sdk/
+
+# IDE and editor files
+.vscode/
+.idea/
+compile_commands.json
+.cache/
+*.swp
+*~
+
+# Firmware & binary artifacts outside build/
+*.uf2
+*.elf
+*.bin
+*.hex
+*.map
+*.dis
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/

@@ -1,0 +1,21 @@
+# ==============================================================================
+# udev rules for Pico Passkey (FIDO2 / WebAuthn Authenticator on Raspberry Pi Pico)
+#
+# Vendor ID (VID):  0x2E8A (Raspberry Pi Foundation)
+# Product ID (PID): 0xF1D0 (Pico Passkey FIDO2 Security Key)
+#
+# Allows non-root user access (via systemd logind uaccess and plugdev group)
+# so web browsers (Chromium, Firefox, Chrome, Edge) can communicate directly
+# with the CTAPHID raw device interface (/dev/hidraw*).
+#
+# Installation:
+#   sudo cp udev/70-pico-passkey.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload-rules
+#   sudo udevadm trigger
+#
+# Ensure your user belongs to the 'plugdev' group:
+#   sudo usermod -a -G plugdev "$USER"
+# ==============================================================================
+
+# Pico Passkey FIDO2 Authenticator
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="f1d0", TAG+="uaccess", GROUP="plugdev", MODE="0660"
