@@ -12,7 +12,12 @@ Plug the Pico in via USB, and it acts as a standalone hardware security key for 
 
 Open **[rashid2g.github.io/passkey-pico](https://rashid2g.github.io/passkey-pico/)** to flash a Pico straight from your browser over WebUSB, or download `pico_passkey.uf2` and drag it onto the `RPI-RP2` drive. The page also covers how to register a passkey, use the button, and troubleshoot USB issues.
 
-The site is plain static HTML in [`docs/index.html`](docs/index.html) and is served by GitHub Pages from the `docs/` folder on `main` (Settings → Pages → Deploy from a branch → `main` / `docs`).
+The site is plain static HTML in [`docs/index.html`](docs/index.html) and is served by GitHub Pages from the `docs/` folder on `main` (Settings → Pages → Deploy from a branch → `main` / `docs`). To preview it locally, serve the folder over HTTP — opening the file directly (`file://`) gives the page an opaque origin and Chrome blocks WebUSB:
+
+```sh
+python3 -m http.server 8000 --directory docs
+# then open http://localhost:8000/
+```
 
 ---
 
